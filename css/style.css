@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+/*start poupop start style*/
+.start-popup {
+    width: 400px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: #d7d7d8;
+    position: relative;
+    margin: auto;
+    top: 200px;
+    border-radius: 5px;
+
+}
+
+.start-popup .head {
+    font-size: 35px;
+    font-weight: bold;
+    font-style: italic;
+    color: #ed1b2e;
+
+}
+
+.start-popup .select-quiz {
+    height: 35px;
+    width: 50%;
+    border: none;
+    outline: none;
+    border: 2px solid #ed1b2e;
+    border-radius: 5px;
+    background-color: #d7d7d8;
+}
+
+.start-popup #btn-start {
+    height: 35px;
+    width: 100px;
+    border: none;
+    border: 2px solid #ed1b2e;
+    border-radius: 5px;
+    background-color: #d7d7d8;
+}
+
+/*end style of popup*/
+/*class hidden*/
+.hidden {
+    display: none;
+}
+
+/*start container*/
+.container {
+    width: 800px;
+    height: 500px;
+    background-color: #d7d7d8;
+    margin: auto;
+    position: relative;
+
+}
+
+/*start style of header*/
+.container header {
+    height: 50px;
+    width: 100%;
+    background-color: #ed1b2e;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+
+}
+
+/*end style of header*/
+
+/*start style of questions*/
+.container section {
+    height: auto;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+
+
+}
+
+section .questions {
+    position: relative;
+    top: 50px;
+}
+
+.questions p {
+    margin-bottom: 10px;
+    padding: 8px;
+}
+
+.questions div {
+    padding: 8px;
+
+}
+
+input[type="radio"] {
+    padding: 10px;
+    margin-right: 10px;
+    accent-color: #ed1b2e;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+label {
+    cursor: pointer;
+
+}
+
+/*end style of questions*/
+
+/*start style footer*/
+.container footer {
+    height: 50px;
+    width: 100%;
+    background-color: #d7d7d8;
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.container footer span {
+    width: 45%;
+    text-align: center;
+    height: 30px;
+    width: 100px;
+    background-color: #ed1b2e;
+    line-height: 30px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*end style of footer*/
+
+/*end style of container*/
