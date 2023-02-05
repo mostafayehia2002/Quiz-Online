@@ -51,6 +51,46 @@
 }
 
 /*end style of popup*/
+
+
+/*start style of result popup*/
+.result-popup {
+    width: 400px;
+    height: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #d7d7d8;
+    position: relative;
+    margin: auto;
+    top: 200px;
+    border-radius: 10px;
+    font-size: 25px;
+    text-transform: capitalize;
+    font-weight: bold;
+    word-spacing: 2px;
+    border: 5px solid #ed1b2e;
+
+}
+
+.result-popup p {
+    width: 100%;
+}
+
+.result-popup span {
+    color: #ed1b2e;
+}
+
+.evaluation{
+    font-weight: bold;
+    font-size: 25px;
+    color:#ed1b2e;
+}
+/*end style of result popup*/
+
 /*class hidden*/
 .hidden {
     display: none;
@@ -76,8 +116,8 @@
     font-weight: bold;
     font-style: italic;
     display: flex;
-    justify-content: space-between;
-    padding: 15px;
+    justify-content:space-between;
+    padding:15px;
 
 }
 
@@ -91,23 +131,36 @@
     display: flex;
     align-items: center;
     font-size: 25px;
-
+    background-color: #d7d7d8;
 
 }
 
 section .questions {
     position: relative;
-    top: 50px;
+    top: 40px;
+    background-color: #d7d7d8;
 }
 
 .questions p {
     margin-bottom: 10px;
     padding: 8px;
+    background-color: #fff;
+
 }
 
-.questions div {
+.answers div {
     padding: 8px;
+    background-color: #fff;
+}
 
+.questions .answers {
+    background-color: #d7d7d8;
+    width: 750px;
+    display: block;
+}
+
+.answers div:not(:last-child) {
+    border-bottom: 2px solid #ed1b2e;
 }
 
 input[type="radio"] {
@@ -117,6 +170,11 @@ input[type="radio"] {
     height: 15px;
     width: 15px;
     cursor: pointer;
+}
+
+input[type="radio"]:checked+label {
+    color: #ed1b2e;
+    font-weight: bold;
 }
 
 label {
@@ -134,11 +192,11 @@ label {
     position: absolute;
     bottom: 0px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
 
 }
 
-.container footer span {
+.container footer #next {
     width: 45%;
     text-align: center;
     height: 30px;
@@ -151,6 +209,26 @@ label {
     font-style: italic;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.bullits {
+    display: flex;
+    padding: 8px;
+}
+
+.bullits p {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 2px;
+    margin-left: 5px;
+    border: 1px solid #d7d7d8;
+
+}
+
+p.active {
+    background-color: #ed1b2e;
 }
 
 /*end style of footer*/
