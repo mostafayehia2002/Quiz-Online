@@ -40,7 +40,7 @@
         "right_answer": " / "
     },
     {
-        "question": "Which of these elements are all <table> elements?",
+        "question": "Which of these elements are all< table >elements?",
         "answer_1": "< table >< tr >< td >",
         "answer_2": "< table >< tr >< tt >",
         "answer_3": "< table >< head >< tfoot >",
