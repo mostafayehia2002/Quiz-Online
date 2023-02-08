@@ -22,7 +22,10 @@ btnStart.onclick = () => {
     quizName.innerHTML = `Quiz Name : ${selectedQuiz.value}`;
 
     console.log(parseInt(questionNumber.innerHTML));
+    //call function to create
     createBullits(10);
+    //call function to start time
+    CalcTime();
 }
 
 //get quiz question 
@@ -125,3 +128,82 @@ function createBullits(number) {
         bullits.appendChild(p);
     }
 }
+//function to calc
+function CalcTime() {
+    let minutes = document.querySelector(".minute");
+    let second = document.querySelector(".second");
+    let t = setInterval(() => {    
+        second.innerHTML --;
+        if (minutes.innerHTML == 0 && second.innerHTML == 0) {
+            //show result
+            let resultPopup = document.querySelector(".result-popup");
+            let scoreResult = document.querySelector(".result-popup span");
+            let evaluation = document.querySelector(".evaluation");
+            resultPopup.classList.remove("hidden");
+            container.classList.add("hidden");
+            scoreResult.innerHTML = `${score}`;
+            if (score > 6) {
+                evaluation.innerHTML = "VeryGood";
+            } else {
+                evaluation.innerHTML = "bad";
+            };
+          
+            //stop function
+            clearInterval(t);
+        }
+        if (second.innerHTML == 0) {
+            second.innerHTML = 59;
+            if (parseInt(minutes.innerHTML) == 0) {
+                minutes.innerHTML = 0;
+            } else {
+                minutes.innerHTML = minutes.innerHTML - 1;
+                nextBtn.click();
+
+            }
+        }
+
+
+    }, 1000)
+
+}
+
+// // function to caluculate time
+// function time() {
+//     let minutes = document.querySelector(".m");
+//     let second = document.querySelector(".s");
+//     let time = document.querySelector(".time");
+//     let t = setInterval(() => {
+//         second.innerHTML = parseInt(second.innerHTML) - 1;
+//         if (parseInt(minutes.innerHTML) === 0 && parseInt(second.innerHTML) === 0 || parseInt(tries.innerHTML) == 10) {
+//             clearInterval(t);
+//             screen.style.display = "block";
+//             p.innerHTML = "Game over";
+//             btn.innerHTML = "try again";
+//             btn.onclick = () => {
+//                 window.location.reload();
+
+//             }
+//         }
+
+//         if (parseInt(second.innerHTML) === 0) {
+//             second.innerHTML = 59;
+//             if (parseInt(minutes.innerHTML) == 0) {
+//                 minutes.innerHTML = 0;
+//             } else {
+//                 minutes.innerHTML = parseInt(minutes.innerHTML) - 1;
+
+//             }
+
+//         }
+//         if (parseInt(second.innerHTML) < 10 && parseInt(minutes.innerHTML) === 0) {
+//             time.style.color = "red";
+
+//         }
+
+
+//     }, duration);
+
+
+
+
+// }
