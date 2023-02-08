@@ -76,6 +76,7 @@ function QuizData(quizName, count) {
 //action of next button
 let nextBtn = document.querySelector("#next");
 nextBtn.onclick = function next() {
+
     let bullits = document.querySelectorAll(".bullits p");
     if (count == 9) {
         let resultPopup = document.querySelector(".result-popup");
@@ -96,6 +97,10 @@ nextBtn.onclick = function next() {
         bullits[count].classList.add("active");
 
     }
+
+    setInterval(()=>{
+        nextBtn.click();
+    },60000);
 }
 
 
@@ -150,14 +155,16 @@ function CalcTime() {
           
             //stop function
             clearInterval(t);
+            
         }
         if (second.innerHTML == 0) {
             second.innerHTML = 59;
             if (parseInt(minutes.innerHTML) == 0) {
                 minutes.innerHTML = 0;
+            
             } else {
                 minutes.innerHTML = minutes.innerHTML - 1;
-                nextBtn.click();
+               
 
             }
         }
@@ -165,5 +172,6 @@ function CalcTime() {
 
     }, 1000)
 
+  
 }
 
