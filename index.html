@@ -1,74 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz Online</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<body>
-
+  <body>
     <div class="start-popup">
-        <span class="head">Quiz Online</span>
-        <select name="" class="select-quiz">
-            <option value="Html">Html Quiz</option>
-            <option value="Css"> Css Quiz</option>
-
-        </select>
-        <button id="btn-start">Start</button>
-
+      <span class="head">Quiz Online</span>
+      <select name="" class="select-quiz">
+        <option value="Html">Html Quiz</option>
+        <option value="Css">Css Quiz</option>
+      </select>
+      <button id="btn-start">Start</button>
     </div>
     <div class="container hidden">
-        <header>
-            <span class="quiz-name"></span>
-            <span class="time">
-                <span>0</span>
-                :
-                <span>9</span>
-                :
-                <span>59</span>
-            </span>
-            <span class="question-number">
-                Question :
-                <span class="number">1</span>
+      <header>
+        <span class="quiz-name"></span>
+        <span class="time">
+          <span>0</span>
+          :
+          <span>9</span>
+          :
+          <span>59</span>
+        </span>
+        <span class="question-number">
+          Question :
+          <span class="number">1</span>
 
-                /10</span>
-        </header>
-        <section></section>   
-        <footer>
-
-            <div class="bullits">
-                <p class="active"></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-            </div>
-            <span id="next">Next</span>
-
-
-        </footer>
-
-
+          /10</span
+        >
+      </header>
+      <section></section>
+      <footer>
+        <div class="bullits">
+          <p class="active"></p>
+        </div>
+        <span id="next">Next</span>
+      </footer>
     </div>
 
-<div class="result-popup hidden">
-<p>
- you score 
-<span  class="score"></span>  from<span>10</span>  questions
-</p>
-<p class="evaluation"></p>
-</div>
+    <div class="result-popup hidden">
+      <p>
+        you score
+        <span class="score"></span> from<span>10</span> questions
+      </p>
+      <p class="evaluation"></p>
+    </div>
 
     <script src="js/main.js"></script>
-</body>
-
+  </body>
 </html>

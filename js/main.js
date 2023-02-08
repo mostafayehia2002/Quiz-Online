@@ -2,7 +2,7 @@ let startPoupop = document.querySelector(".start-popup");
 let selectedQuiz = document.querySelector("select");
 let btnStart = document.getElementById("btn-start");
 let count = 0;
-let score = 0; 
+let score = 0;
 //variable of header
 let quizName = document.querySelector(".quiz-name");
 let questionNumber = document.querySelector(".number");
@@ -17,17 +17,18 @@ btnStart.onclick = () => {
     //display container
     container.classList.remove("hidden");
     //call function QuizData
-    QuizData(selectedQuiz.value,count);
+    QuizData(selectedQuiz.value, count);
     //add quiz name in the header
     quizName.innerHTML = `Quiz Name : ${selectedQuiz.value}`;
 
- 
+    console.log(parseInt(questionNumber.innerHTML));
+    createBullits(10);
 }
 
 //get quiz question 
 
 function QuizData(quizName, count) {
-    questionNumber.innerHTML = `${count+1}`;
+    questionNumber.innerHTML = `${count + 1}`;
     let section = document.querySelector("section");
     let req = new XMLHttpRequest();
     req.open("Get", `quiz/${quizName}Quiz.json`);
@@ -36,7 +37,7 @@ function QuizData(quizName, count) {
         if (req.status == 200 && req.readyState == 4) {
             let data = JSON.parse(req.responseText);
             section.innerHTML = `<div class="questions">
-                <p class="question">${ data[count].question }</p>
+                <p class="question">${data[count].question}</p>
                 <div class="answers">
                     <div>
                         <input type="radio" name="answer" id="answer_1" value="${data[count].answer_1}">
@@ -60,68 +61,67 @@ function QuizData(quizName, count) {
             </div>
             `;
             let answersinput = document.querySelectorAll(".answers input");
-           
-            chechAnswer(data, answersinput);
+
+            checkAnswer(data, answersinput);
         }
-        
-        
+
+
 
     }//end request
 }
 
-
-
 //action of next button
 let nextBtn = document.querySelector("#next");
-let bullits = document.querySelectorAll(".bullits p");
 nextBtn.onclick = function next() {
-    bullits.forEach((e) => {
-        e.classList.remove("active");
-    });
-    if (count== 9) {
+    let bullits = document.querySelectorAll(".bullits p");
+    if (count == 9) {
         let resultPopup = document.querySelector(".result-popup");
         let scoreResult = document.querySelector(".result-popup span");
         let evaluation = document.querySelector(".evaluation");
-        
         resultPopup.classList.remove("hidden");
         container.classList.add("hidden");
         scoreResult.innerHTML = `${score}`;
-      if(score>6){
+        if (score > 6) {
             evaluation.innerHTML = "VeryGood";
-      } else {
-          evaluation.innerHTML = "bad";
+        } else {
+            evaluation.innerHTML = "bad";
         };
         console.log(`result=${score}`);
     } else {
         count++;
-        bullits[count].classList.add("active");
         QuizData(selectedQuiz.value, count);
-        
-
-
+        bullits[count].classList.add("active");
 
     }
 }
 
-       
-        
-  
-function chechAnswer(data, answersinput) {   
-    answersinput.forEach((a) => {      
+
+
+//function to check answer  
+function checkAnswer(data, answersinput) {
+    answersinput.forEach((a) => {
         a.onclick = () => {
             console.log(data[count].right_answer);
             console.log(a.value);
             if (data[count].right_answer == a.value) {
                 score++;
 
-           }
+            }
         }
-    })   
+    })
 
-    
+
 }
 
 
-    
-    
 
+//function to create bullits  
+
+function createBullits(number) {
+    let questionNumber = number - 1;
+    let bullits = document.querySelector(".bullits");
+    for (let i = 0; i < questionNumber; i++) {
+        let p = document.createElement("p");
+        bullits.appendChild(p);
+    }
+}
